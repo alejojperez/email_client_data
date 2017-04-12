@@ -1,32 +1,31 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.gmail;
+package com.github.alejojperez.email_client_data.services.google.plus;
 
-import com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.Manager;
-import com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.configuration.GlobalValues;
-import com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.oauth.Authorizer;
+import com.github.alejojperez.email_client_data.services.google.configuration.GlobalValues;
+import com.github.alejojperez.email_client_data.services.google.oauth.Authorizer;
+import com.github.alejojperez.email_client_data.services.google.Manager;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.services.gmail.Gmail;
+import com.google.api.services.plus.Plus;
+
 import java.io.IOException;
 
-public class GmailManager implements Manager
+public class PlusManager implements Manager
 {
     /**
      * Singleton instance
      */
-    private static GmailManager singleton = new GmailManager();
+    private static PlusManager singleton = new PlusManager();
 
     /**
      * A private Constructor prevents any other
      * class from instantiating.
      */
-    private GmailManager() { }
+    private PlusManager() { }
 
     /**
      * Static 'instance' method
      * @return
      */
-    public static GmailManager getInstance( ) {
-        return singleton;
-    }
+    public static PlusManager getInstance( ) { return singleton; }
 
     /**
      * Get the Gmail service
@@ -34,7 +33,7 @@ public class GmailManager implements Manager
      * @return
      */
     @Override
-    public Gmail getService(String accountIdentifier) throws IOException
+    public Plus getService(String accountIdentifier) throws IOException
     {
         Credential credential = Authorizer.getCredentials(accountIdentifier);
 
@@ -47,9 +46,9 @@ public class GmailManager implements Manager
      * @return
      */
     @Override
-    public Gmail getService(Credential credential) throws IOException
+    public Plus getService(Credential credential) throws IOException
     {
-        return new Gmail
+        return new Plus
                 .Builder(GlobalValues.HTTP_TRANSPORT, GlobalValues.JSON_FACTORY, credential)
                 .setApplicationName(GlobalValues.APPLICATION_NAME)
                 .build();

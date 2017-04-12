@@ -1,7 +1,7 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.oauth;
+package com.github.alejojperez.email_client_data.services.google.oauth;
 
-import com.gitlab.ultimate_jet_vacations.desktop_client.data.connections.GmailConnection;
-import com.gitlab.ultimate_jet_vacations.desktop_client.data.entities.GmailAccountCredential;
+import com.github.alejojperez.email_client_data.connections.GmailConnection;
+import com.github.alejojperez.email_client_data.entities.GmailAccountCredential;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.CredentialStore;
 

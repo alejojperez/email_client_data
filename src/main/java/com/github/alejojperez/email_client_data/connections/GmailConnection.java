@@ -1,4 +1,4 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.connections;
+package com.github.alejojperez.email_client_data.connections;
 
 import org.javalite.activejdbc.DB;
 

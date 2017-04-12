@@ -1,4 +1,4 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.entities;
+package com.github.alejojperez.email_client_data.entities;
 
 import org.javalite.activejdbc.Model;
 import org.javalite.activejdbc.annotations.DbName;

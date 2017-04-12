@@ -1,4 +1,4 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google;
+package com.github.alejojperez.email_client_data.services.google;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.services.json.AbstractGoogleJsonClient;

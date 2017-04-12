@@ -1,6 +1,6 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.oauth;
+package com.github.alejojperez.email_client_data.services.google.oauth;
 
-import com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.configuration.GlobalValues;
+import com.github.alejojperez.email_client_data.services.google.configuration.GlobalValues;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;

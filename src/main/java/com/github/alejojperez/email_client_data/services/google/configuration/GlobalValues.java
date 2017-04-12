@@ -1,4 +1,4 @@
-package com.gitlab.ultimate_jet_vacations.desktop_client.data.services.google.configuration;
+package com.github.alejojperez.email_client_data.services.google.configuration;
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;

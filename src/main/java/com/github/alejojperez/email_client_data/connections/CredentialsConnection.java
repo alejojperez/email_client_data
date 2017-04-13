@@ -2,7 +2,7 @@ package com.github.alejojperez.email_client_data.connections;
 
 import org.javalite.activejdbc.DB;
 
-public class GmailConnection implements IConnection
+public class CredentialsConnection implements IConnection
 {
     /**
      * Connection name
@@ -12,15 +12,15 @@ public class GmailConnection implements IConnection
     /**
      * Singleton instance
      */
-    private static GmailConnection singleton = new GmailConnection( );
+    private static CredentialsConnection singleton = new CredentialsConnection( );
 
     /* A private Constructor prevents any other
      * class from instantiating.
      */
-    private GmailConnection() { }
+    private CredentialsConnection() { }
 
     /* Static 'instance' method */
-    public static GmailConnection getInstance( ) {
+    public static CredentialsConnection getInstance( ) {
         return singleton;
     }
 

@@ -1,6 +1,6 @@
 package com.github.alejojperez.email_client_data.services.google.oauth;
 
-import com.github.alejojperez.email_client_data.connections.GmailConnection;
+import com.github.alejojperez.email_client_data.connections.CredentialsConnection;
 import com.github.alejojperez.email_client_data.entities.AccountCredential;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.CredentialStore;
@@ -23,11 +23,11 @@ public class CredentialsStore implements CredentialStore
      */
     public boolean load(String emailAccount, Credential credential) throws IOException
     {
-        GmailConnection.getInstance().open();
+        CredentialsConnection.getInstance().open();
 
         AccountCredential accountCredential = AccountCredential.findFirst("identifier = ?", emailAccount);
 
-        GmailConnection.getInstance().close();
+        CredentialsConnection.getInstance().close();
 
         if(accountCredential == null)
             return false;
@@ -76,7 +76,7 @@ public class CredentialsStore implements CredentialStore
 
         String credentials = credentialsBuilder.build().toString();
 
-        GmailConnection.getInstance().open();
+        CredentialsConnection.getInstance().open();
 
         AccountCredential accountCredential = AccountCredential.findFirst("identifier = ?", emailAccount);
 
@@ -91,7 +91,7 @@ public class CredentialsStore implements CredentialStore
 
         accountCredential.saveIt();
 
-        GmailConnection.getInstance().close();
+        CredentialsConnection.getInstance().close();
     }
 
     /**
@@ -102,10 +102,10 @@ public class CredentialsStore implements CredentialStore
      */
     public void delete(String emailAccount, Credential credential) throws IOException
     {
-        GmailConnection.getInstance().open();
+        CredentialsConnection.getInstance().open();
 
         AccountCredential.delete("identifier = ?", emailAccount);
 
-        GmailConnection.getInstance().close();
+        CredentialsConnection.getInstance().close();
     }
 }

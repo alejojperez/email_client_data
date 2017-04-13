@@ -1,7 +1,7 @@
 package com.github.alejojperez.email_client_data.services.google.oauth;
 
 import com.github.alejojperez.email_client_data.connections.GmailConnection;
-import com.github.alejojperez.email_client_data.entities.GmailAccountCredential;
+import com.github.alejojperez.email_client_data.entities.AccountCredential;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.CredentialStore;
 
@@ -25,7 +25,7 @@ public class CredentialsStore implements CredentialStore
     {
         GmailConnection.getInstance().open();
 
-        GmailAccountCredential accountCredential = GmailAccountCredential.findFirst("identifier = ?", emailAccount);
+        AccountCredential accountCredential = AccountCredential.findFirst("identifier = ?", emailAccount);
 
         GmailConnection.getInstance().close();
 
@@ -78,10 +78,10 @@ public class CredentialsStore implements CredentialStore
 
         GmailConnection.getInstance().open();
 
-        GmailAccountCredential accountCredential = GmailAccountCredential.findFirst("identifier = ?", emailAccount);
+        AccountCredential accountCredential = AccountCredential.findFirst("identifier = ?", emailAccount);
 
         if(accountCredential == null)
-            accountCredential = new GmailAccountCredential();
+            accountCredential = new AccountCredential();
 
         if (accountCredential.get("alias") == null)
             accountCredential.set("alias", emailAccount);
@@ -104,7 +104,7 @@ public class CredentialsStore implements CredentialStore
     {
         GmailConnection.getInstance().open();
 
-        GmailAccountCredential.delete("identifier = ?", emailAccount);
+        AccountCredential.delete("identifier = ?", emailAccount);
 
         GmailConnection.getInstance().close();
     }

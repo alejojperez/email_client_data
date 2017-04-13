@@ -2,13 +2,10 @@ package com.github.alejojperez.email_client_data;
 
 import com.github.alejojperez.email_client_data.services.google.gmail.GmailManager;
 import com.github.alejojperez.email_client_data.services.google.oauth.Authorizer;
-import com.github.alejojperez.email_client_data.services.google.plus.PlusManager;
 import com.google.api.client.auth.oauth2.Credential;
 
 import com.google.api.services.gmail.model.*;
 import com.google.api.services.gmail.Gmail;
-import com.google.api.services.plus.Plus;
-import com.google.api.services.plus.model.Person;
 
 import java.util.List;
 
@@ -36,17 +33,7 @@ public class App
             }
         }
 
-        Plus plusService = PlusManager.getInstance().getService(credential);
-        Person userInfo = plusService.people().get("me").execute();
-
-        List<Person.Emails> emails = userInfo.getEmails();
-        if (emails.size() == 0) {
-            System.out.println("No emails found.");
-        } else {
-            System.out.println("Emails:");
-            for (Person.Emails email : emails) {
-                System.out.printf("- %s\n", email.getValue());
-            }
-        }
+        Profile profile = gmailService.users().getProfile(user).execute();
+        System.out.printf("Email: %s", profile.getEmailAddress());
     }
 }

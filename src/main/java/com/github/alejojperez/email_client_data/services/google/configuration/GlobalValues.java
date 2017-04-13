@@ -5,7 +5,6 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.gmail.GmailScopes;
-import com.google.api.services.plus.PlusScopes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,11 +34,7 @@ public class GlobalValues
             GmailScopes.GMAIL_READONLY,
             GmailScopes.GMAIL_SEND,
             GmailScopes.GMAIL_SETTINGS_BASIC,
-            GmailScopes.GMAIL_SETTINGS_SHARING,
-            PlusScopes.PLUS_LOGIN,
-            PlusScopes.PLUS_ME,
-            PlusScopes.USERINFO_EMAIL,
-            PlusScopes.USERINFO_PROFILE
+            GmailScopes.GMAIL_SETTINGS_SHARING
     );
 
     /**

@@ -6,4 +6,4 @@ import org.javalite.activejdbc.annotations.Table;
 
 @DbName("credentials.sqlite")
 @Table("account_credentials")
-public class GmailAccountCredential extends Model { }
+public class AccountCredential extends Model { }

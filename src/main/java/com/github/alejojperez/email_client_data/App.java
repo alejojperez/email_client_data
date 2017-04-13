@@ -27,7 +27,7 @@ public class App
         if (labels.size() == 0) {
             System.out.println("No labels found.");
         } else {
-            System.out.println("Labels:");
+            System.out.println("Labels: ");
             for (Label label : labels) {
                 System.out.printf("- %s\n", label.getName());
             }
